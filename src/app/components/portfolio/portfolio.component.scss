@@ -1,0 +1,100 @@
+
+body{
+    background-color: #EBF3E8!important;
+}
+.thumbnail {
+    mask-image: linear-gradient(rgba(0, 0, 0, 1) 0%, transparent);
+}
+
+.circle {
+    stroke: white;
+    stroke-dasharray: 650;
+    stroke-dashoffset: 650;
+    -webkit-transition: all 0.5s ease-in-out;
+    opacity: 0.3;
+  }
+  
+  .playBut {
+  /*  border: 1px solid red;*/
+    display: inline-block;
+    position: absolute;
+    bottom: -6%;
+    left: 7%;
+    border-radius: 50%;
+    background: rgb(243, 101, 101);
+    -webkit-transition: all 0.5s ease;
+    
+    .triangle {
+      -webkit-transition: all 0.7s ease-in-out;
+      stroke-dasharray: 240;
+      stroke-dashoffset: 480;
+      stroke: white;
+      transform: translateY(0) 
+     }
+    
+    
+    &:hover {
+      
+      .triangle {
+        stroke-dashoffset: 0;
+        opacity: 1;
+        stroke: white;
+        animation: nudge 0.7s ease-in-out;
+        
+        @keyframes nudge{
+          0% {
+            transform: translateX(0)  
+          }
+          30% {
+            transform: translateX(-5px)
+          }
+          50% {
+            transform: translateX(5px)
+          }
+          70% {
+            transform: translateX(-2px)
+          }
+          100% {
+            transform: translateX(0)
+          }
+        }
+      }
+      
+      .circle {
+        stroke-dashoffset: 0;
+        opacity: 1;
+      }
+      
+    }
+  }
+    
+  
+
+.text-box {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.380);
+    border-radius: 10px;
+    transition: opacity 0.5s;
+}
+
+.box:hover .text-box {
+    opacity: 1;
+}
+
+.image img {
+    transition: filter 0.5s;
+}
+
+.box:hover .image img {
+    
+    filter: blur(8px);
+}
